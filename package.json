@@ -1,0 +1,66 @@
+{
+    "name": "admin-server-open",
+    "version": "1.0.0",
+    "description": "后台管理服务端",
+    "main": "index.js",
+    "scripts": {
+        "start": "node bin/www",
+        "dev": "cross-env NODE_ENV=dev ./node_modules/.bin/nodemon bin/www --trace-warnings",
+        "prd-dev": "cross-env NODE_ENV=prd_dev pm2 start bin/pm2-prd-dev.config.js",
+        "prd": "cross-env NODE_ENV=production NODE_LOG_DIR=/tmp/admin-server ENABLE_NODE_LOG=YES  pm2 start bin/pm2-prd.config.js",
+        "test": "cross-env NODE_ENV=test jest --runInBand  --passWithNoTests --colors",
+        "lint": "eslint \"src/**/*.{js,ts}\"",
+        "lint-fix": "eslint --fix \"src/**/*.{js,ts}\""
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/imooc-lego/admin-server.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/imooc-lego/admin-server/issues"
+    },
+    "homepage": "https://github.com/imooc-lego/admin-server#readme",
+    "devDependencies": {
+        "eslint": "^7.8.1",
+        "eslint-config-airbnb-base": "^14.2.0",
+        "eslint-config-prettier": "^6.11.0",
+        "eslint-plugin-import": "^2.22.0",
+        "eslint-plugin-prettier": "^3.1.4",
+        "husky": "^4.3.0",
+        "jest": "^26.4.2",
+        "lint-staged": "^10.3.0",
+        "nodemon": "^1.8.1",
+        "prettier": "^2.1.1"
+    },
+    "dependencies": {
+        "ajv": "^6.12.5",
+        "cos-nodejs-sdk-v5": "^2.7.2",
+        "cross-env": "^7.0.2",
+        "date-fns": "^2.16.1",
+        "debug": "^2.6.3",
+        "jsonwebtoken": "^8.5.1",
+        "koa": "^2.2.0",
+        "koa-bodyparser": "^3.2.0",
+        "koa-convert": "^1.2.0",
+        "koa-helmet": "^6.0.0",
+        "koa-json": "^2.0.2",
+        "koa-jwt": "^4.0.0",
+        "koa-logger": "^2.0.1",
+        "koa-onerror": "^1.2.1",
+        "koa-router": "^7.1.1",
+        "koa-static": "^3.0.0",
+        "koa-views": "^5.2.1",
+        "koa2-cors": "^2.0.6",
+        "lodash": "^4.17.20",
+        "mysql2": "^2.1.0",
+        "pm2": "^4.4.1",
+        "prompt": "^1.0.0",
+        "pug": "^2.0.0-rc.1",
+        "redis": "^3.0.2",
+        "sequelize": "^6.3.5",
+        "simple-git": "^2.21.0",
+        "uuid": "^8.3.1"
+    }
+}

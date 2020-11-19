@@ -1,0 +1,10 @@
+version: '3'
+services:
+    admin-server:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        image: admin-server # 依赖于当前 Dockerfile 创建镜像
+        container_name: admin-server
+        ports:
+            - 8084:3003 # 宿主机通过 8084 访问
